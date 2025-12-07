@@ -1,0 +1,26 @@
+# 1. 컴파일 및 빌드 결과물
+target/
+build/
+*.class
+*.jar
+*.war
+*.zip
+
+# 2. Maven 빌드 도구 파일
+.mvn/wrapper/maven-wrapper.jar
+/repo/
+pom.xml.tag
+
+# 3. 설정 및 보안 관련 파일 (로컬 설정 파일)
+application*.yml.local
+application*.properties.local
+*.key
+*.jks
+*.pem
+*.p12
+
+# 4. 임시 파일 및 DB 파일
+*.h2.db
+*.mv.db
+db.sqlite
+nohup.out
