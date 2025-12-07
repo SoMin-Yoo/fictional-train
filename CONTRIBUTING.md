@@ -1,4 +1,4 @@
-# 🚂 Contribution Guide
+# 🚂 기여 가이드
 
 > 코드 포맷팅을 위해 IntelliJ 설정을 권장합니다.
 

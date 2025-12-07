@@ -1,6 +1,4 @@
-# 🚂 Fictional Train
-
----
+# 🚂 프로젝트 개요
 
 ### Backend
 
@@ -25,7 +23,3 @@ cd frontend
 npm install
 npm run dev
 ```
-
----
-
-Detailed contribution rules and development guidelines can be found in [CONTRIBUTING.md](CONTRIBUTING.md).
