@@ -17,7 +17,7 @@ public class UserService {
 
     @Transactional
     public void join(UserJoinRequest request) {
-        User user = request.toEntity();
+        User user = User.create(request.username(), request.password());
         userRepository.save(user);
     }
 
