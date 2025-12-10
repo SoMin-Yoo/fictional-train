@@ -35,7 +35,7 @@ public class UserService {
                 System.out.println(">>>> [DEBUG] 유저 확인 불가: " + username);
                 return new UsernameNotFoundException("유저 확인 불가: " + username);
             });
-        return new UserResponse(user.getUsername());
+        return UserResponse.from(user);
     }
 
 }
