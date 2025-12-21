@@ -4,6 +4,8 @@ import com.w.backend.domain.user.dto.UserJoinRequest;
 import com.w.backend.domain.user.dto.UserResponse;
 import com.w.backend.domain.user.entity.User;
 import com.w.backend.domain.user.mapper.UserMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
@@ -31,8 +35,7 @@ public class UserService {
     public UserResponse getUserByUsername(String username) {
         User user = userMapper.findByUsername(username)
             .orElseThrow(() -> {
-                System.out.println(">>>> [DEBUG] 예외 발생 위치: UserService");
-                System.out.println(">>>> [DEBUG] 유저 확인 불가: " + username);
+                logger.warn("유저 확인 불가: {}", username);
                 return new UsernameNotFoundException("유저 확인 불가: " + username);
             });
         return UserResponse.from(user);
