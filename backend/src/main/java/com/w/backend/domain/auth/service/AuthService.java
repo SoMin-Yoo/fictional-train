@@ -86,7 +86,7 @@ public class AuthService {
     }
 
     private void validateTokenMatch(RefreshToken storedToken, String requestToken) {
-        if (!storedToken.getValue().equals(requestToken)) {
+        if (!storedToken.value().equals(requestToken)) {
             throw new RuntimeException("토큰의 유저 정보가 일치하지 않습니다.");
         }
     }
