@@ -1,6 +1,6 @@
 package com.w.backend.domain.auth.service;
 
-import com.w.backend.domain.auth.dto.UserLoginRequst;
+import com.w.backend.domain.auth.dto.UserLoginRequest;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,7 +22,7 @@ public class AuthService {
         this.authenticationManager = authenticationManager;
     }
 
-    public void login(UserLoginRequst request, HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+    public void login(UserLoginRequest request, HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
         UsernamePasswordAuthenticationToken token =
             new UsernamePasswordAuthenticationToken(request.username(), request.password());
         Authentication authentication = authenticationManager.authenticate(token);

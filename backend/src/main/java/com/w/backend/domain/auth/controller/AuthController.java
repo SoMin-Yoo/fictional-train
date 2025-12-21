@@ -1,6 +1,6 @@
 package com.w.backend.domain.auth.controller;
 
-import com.w.backend.domain.auth.dto.UserLoginRequst;
+import com.w.backend.domain.auth.dto.UserLoginRequest;
 import com.w.backend.domain.auth.service.AuthService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,7 +21,7 @@ public class AuthController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> login(@RequestBody UserLoginRequst request,
+    public ResponseEntity<Void> login(@RequestBody UserLoginRequest request,
                                       HttpServletRequest httpRequest,
                                       HttpServletResponse httpResponse) {
         authService.login(request, httpRequest, httpResponse);
